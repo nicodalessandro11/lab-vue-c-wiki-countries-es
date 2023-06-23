@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand bg-primary d-flex justify-content-between fixed-top text-white">
+    <nav class="navbar navbar-expand d-flex bg-body-tertiary justify-content-between fixed-top">
         <p class="ms-5 mt-3 fs-4">LAB - WikiCountries</p>
         <i class="fa-regular fa-flag me-5 fs-4"></i>
     </nav>
