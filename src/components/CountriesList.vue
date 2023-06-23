@@ -1,0 +1,1251 @@
+<template>
+    <div class="container w-75 mt-5">
+        <div class="row mt-5">
+            <div class="col-4 mt-5" style="max-height: 82vh; overflow-y: scroll;">
+                <div v-for="country in CountriesList" class="border text-center py-3">
+                    <Country :countryCode="country.alpha2Code.toLowerCase()" :countryName="country.name.common"
+                        :alphaCode="country.alpha3Code" />
+                </div>
+            </div>
+            <div class="col-8 mt-5">
+                <router-view />
+            </div>
+        </div>
+    </div>
+</template>
+
+<script setup>
+import Country from './Country.vue';
+
+const CountriesList = [
+    {
+        "name": {
+            "common": "Aruba",
+            "official": "Aruba",
+            "native": {
+                "nld": {
+                    "official": "Aruba",
+                    "common": "Aruba"
+                },
+                "pap": {
+                    "official": "Aruba",
+                    "common": "Aruba"
+                }
+            }
+        },
+        "tld": [".aw"],
+        "alpha2Code": "AW",
+        "alpha3Code": "ABW",
+        "independent": false,
+        "status": "officially-assigned",
+        "unMember": false,
+        "currencies": {
+            "AWG": {
+                "name": "Aruban florin",
+                "symbol": "\u0192"
+            }
+        },
+        "idd": {
+            "root": "+2",
+            "suffixes": ["97"]
+        },
+        "capital": ["Oranjestad"],
+        "altSpellings": ["AW"],
+        "region": "Americas",
+        "subregion": "Caribbean",
+        "languages": {
+            "nld": "Dutch",
+            "pap": "Papiamento"
+        },
+        "translations": {
+            "ces": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "deu": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "est": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "fin": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "fra": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "hrv": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "hun": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "ita": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "jpn": {
+                "official": "\u30a2\u30eb\u30d0",
+                "common": "\u30a2\u30eb\u30d0"
+            },
+            "kor": {
+                "official": "\uc544\ub8e8\ubc14",
+                "common": "\uc544\ub8e8\ubc14"
+            },
+            "nld": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "per": {
+                "official": "\u0622\u0631\u0648\u0628\u0627",
+                "common": "\u0622\u0631\u0648\u0628\u0627"
+            },
+            "pol": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "por": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "rus": {
+                "official": "\u0410\u0440\u0443\u0431\u0430",
+                "common": "\u0410\u0440\u0443\u0431\u0430"
+            },
+            "slk": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "spa": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "swe": {
+                "official": "Aruba",
+                "common": "Aruba"
+            },
+            "urd": {
+                "official": "\u0627\u0631\u0648\u0628\u0627",
+                "common": "\u0627\u0631\u0648\u0628\u0627"
+            },
+            "zho": {
+                "official": "\u963f\u9c81\u5df4",
+                "common": "\u963f\u9c81\u5df4"
+            }
+        },
+        "latlng": [12.5, -69.96666666],
+        "landlocked": false,
+        "borders": [],
+        "area": 180,
+        "demonyms": {
+            "eng": {
+                "f": "Aruban",
+                "m": "Aruban"
+            },
+            "fra": {
+                "f": "Arubaise",
+                "m": "Arubais"
+            }
+        }
+    },
+    {
+        "name": {
+            "common": "Afghanistan",
+            "official": "Islamic Republic of Afghanistan",
+            "native": {
+                "prs": {
+                    "official": "\u062c\u0645\u0647\u0648\u0631\u06cc \u0627\u0633\u0644\u0627\u0645\u06cc \u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646",
+                    "common": "\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646"
+                },
+                "pus": {
+                    "official": "\u062f \u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646 \u0627\u0633\u0644\u0627\u0645\u064a \u062c\u0645\u0647\u0648\u0631\u06cc\u062a",
+                    "common": "\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646"
+                },
+                "tuk": {
+                    "official": "Owganystan Yslam Respublikasy",
+                    "common": "Owganystan"
+                }
+            }
+        },
+        "tld": [".af"],
+        "alpha2Code": "AF",
+        "alpha3Code": "AFG",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "AFN": {
+                "name": "Afghan afghani",
+                "symbol": "\u060b"
+            }
+        },
+        "idd": {
+            "root": "+9",
+            "suffixes": ["3"]
+        },
+        "capital": ["Kabul"],
+        "altSpellings": ["AF", "Af\u0121\u0101nist\u0101n"],
+        "region": "Asia",
+        "subregion": "Southern Asia",
+        "languages": {
+            "prs": "Dari",
+            "pus": "Pashto",
+            "tuk": "Turkmen"
+        },
+        "translations": {
+            "ces": {
+                "official": "Afgh\u00e1nsk\u00e1 isl\u00e1msk\u00e1 republika",
+                "common": "Afgh\u00e1nist\u00e1n"
+            },
+            "cym": {
+                "official": "Gweriniaeth Islamaidd Affganistan",
+                "common": "Affganistan"
+            },
+            "deu": {
+                "official": "Islamische Republik Afghanistan",
+                "common": "Afghanistan"
+            },
+            "est": {
+                "official": "Afganistani Islamivabariik",
+                "common": "Afganistan"
+            },
+            "fin": {
+                "official": "Afganistanin islamilainen tasavalta",
+                "common": "Afganistan"
+            },
+            "fra": {
+                "official": "R\u00e9publique islamique d'Afghanistan",
+                "common": "Afghanistan"
+            },
+            "hrv": {
+                "official": "Islamska Republika Afganistan",
+                "common": "Afganistan"
+            },
+            "hun": {
+                "official": "Afganiszt\u00e1ni Iszl\u00e1m K\u00f6zt\u00e1rsas\u00e1g",
+                "common": "Afganiszt\u00e1n"
+            },
+            "ita": {
+                "official": "Repubblica islamica dell'Afghanistan",
+                "common": "Afghanistan"
+            },
+            "jpn": {
+                "official": "\u30a2\u30d5\u30ac\u30cb\u30b9\u30bf\u30f3\u00b7\u30a4\u30b9\u30e9\u30e0\u5171\u548c\u56fd",
+                "common": "\u30a2\u30d5\u30ac\u30cb\u30b9\u30bf\u30f3"
+            },
+            "kor": {
+                "official": "\uc544\ud504\uac00\ub2c8\uc2a4\ud0c4 \uc774\uc2ac\ub78c \uacf5\ud654\uad6d",
+                "common": "\uc544\ud504\uac00\ub2c8\uc2a4\ud0c4"
+            },
+            "nld": {
+                "official": "Islamitische Republiek Afghanistan",
+                "common": "Afghanistan"
+            },
+            "per": {
+                "official": "\u062c\u0645\u0647\u0648\u0631\u06cc \u0627\u0633\u0644\u0627\u0645\u06cc \u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646",
+                "common": "\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646"
+            },
+            "pol": {
+                "official": "Islamska Republika Afganistanu",
+                "common": "Afganistan"
+            },
+            "por": {
+                "official": "Rep\u00fablica Isl\u00e2mica do Afeganist\u00e3o",
+                "common": "Afeganist\u00e3o"
+            },
+            "rus": {
+                "official": "\u0418\u0441\u043b\u0430\u043c\u0441\u043a\u0430\u044f \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0410\u0444\u0433\u0430\u043d\u0438\u0441\u0442\u0430\u043d",
+                "common": "\u0410\u0444\u0433\u0430\u043d\u0438\u0441\u0442\u0430\u043d"
+            },
+            "slk": {
+                "official": "Afg\u00e1nsky islamsk\u00fd \u0161t\u00e1t",
+                "common": "Afganistan"
+            },
+            "spa": {
+                "official": "Rep\u00fablica Isl\u00e1mica de Afganist\u00e1n",
+                "common": "Afganist\u00e1n"
+            },
+            "swe": {
+                "official": "Islamiska republiken Afghanistan",
+                "common": "Afghanistan"
+            },
+            "urd": {
+                "official": "\u0627\u0633\u0644\u0627\u0645\u06cc \u062c\u0645\u06c1\u0648\u0631\u06cc\u06c1 \u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646",
+                "common": "\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646"
+            },
+            "zho": {
+                "official": "\u963f\u5bcc\u6c57\u4f0a\u65af\u5170\u5171\u548c\u56fd",
+                "common": "\u963f\u5bcc\u6c57"
+            }
+        },
+        "latlng": [33, 65],
+        "landlocked": true,
+        "borders": ["IRN", "PAK", "TKM", "UZB", "TJK", "CHN"],
+        "area": 652230,
+        "demonyms": {
+            "eng": {
+                "f": "Afghan",
+                "m": "Afghan"
+            },
+            "fra": {
+                "f": "Afghane",
+                "m": "Afghan"
+            }
+        }
+    },
+    {
+        "name": {
+            "common": "Angola",
+            "official": "Republic of Angola",
+            "native": {
+                "por": {
+                    "official": "Rep\u00fablica de Angola",
+                    "common": "Angola"
+                }
+            }
+        },
+        "tld": [".ao"],
+        "alpha2Code": "AO",
+        "alpha3Code": "AGO",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "AOA": {
+                "name": "Angolan kwanza",
+                "symbol": "Kz"
+            }
+        },
+        "idd": {
+            "root": "+2",
+            "suffixes": ["44"]
+        },
+        "capital": ["Luanda"],
+        "altSpellings": [
+            "AO",
+            "Rep\u00fablica de Angola",
+            "\u0281\u025bpublika de an'\u0261\u0254la"
+        ],
+        "region": "Africa",
+        "subregion": "Middle Africa",
+        "languages": {
+            "por": "Portuguese"
+        },
+        "translations": {
+            "ces": {
+                "official": "Angolsk\u00e1 republika",
+                "common": "Angola"
+            },
+            "cym": {
+                "official": "Gweriniaeth Angola",
+                "common": "Angola"
+            },
+            "deu": {
+                "official": "Republik Angola",
+                "common": "Angola"
+            },
+            "est": {
+                "official": "Angola Vabariik",
+                "common": "Angola"
+            },
+            "fin": {
+                "official": "Angolan tasavalta",
+                "common": "Angola"
+            },
+            "fra": {
+                "official": "R\u00e9publique d'Angola",
+                "common": "Angola"
+            },
+            "hrv": {
+                "official": "Republika Angola",
+                "common": "Angola"
+            },
+            "hun": {
+                "official": "Angola",
+                "common": "Angola"
+            },
+            "ita": {
+                "official": "Repubblica dell'Angola",
+                "common": "Angola"
+            },
+            "jpn": {
+                "official": "\u30a2\u30f3\u30b4\u30e9\u5171\u548c\u56fd",
+                "common": "\u30a2\u30f3\u30b4\u30e9"
+            },
+            "kor": {
+                "official": "\uc559\uace8\ub77c \uacf5\ud654\uad6d",
+                "common": "\uc559\uace8\ub77c"
+            },
+            "nld": {
+                "official": "Republiek Angola",
+                "common": "Angola"
+            },
+            "per": {
+                "official": "\u062c\u0645\u0647\u0648\u0631\u06cc \u0622\u0646\u06af\u0648\u0644\u0627",
+                "common": "\u0622\u0646\u06af\u0648\u0644\u0627"
+            },
+            "pol": {
+                "official": "Republika Angoli",
+                "common": "Angola"
+            },
+            "por": {
+                "official": "Rep\u00fablica de Angola",
+                "common": "Angola"
+            },
+            "rus": {
+                "official": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0410\u043d\u0433\u043e\u043b\u0430",
+                "common": "\u0410\u043d\u0433\u043e\u043b\u0430"
+            },
+            "slk": {
+                "official": "Angolsk\u00e1 republika",
+                "common": "Angola"
+            },
+            "spa": {
+                "official": "Rep\u00fablica de Angola",
+                "common": "Angola"
+            },
+            "swe": {
+                "official": "Republiken Angola",
+                "common": "Angola"
+            },
+            "urd": {
+                "official": "\u062c\u0645\u06c1\u0648\u0631\u06cc\u06c1 \u0627\u0646\u06af\u0648\u0644\u06c1",
+                "common": "\u0627\u0646\u06af\u0648\u0644\u06c1"
+            },
+            "zho": {
+                "official": "\u5b89\u54e5\u62c9\u5171\u548c\u56fd",
+                "common": "\u5b89\u54e5\u62c9"
+            }
+        },
+        "latlng": [-12.5, 18.5],
+        "landlocked": false,
+        "borders": ["COG", "COD", "ZMB", "NAM"],
+        "area": 1246700,
+        "demonyms": {
+            "eng": {
+                "f": "Angolan",
+                "m": "Angolan"
+            },
+            "fra": {
+                "f": "Angolaise",
+                "m": "Angolais"
+            }
+        }
+    },
+    {
+        "name": {
+            "common": "Anguilla",
+            "official": "Anguilla",
+            "native": {
+                "eng": {
+                    "official": "Anguilla",
+                    "common": "Anguilla"
+                }
+            }
+        },
+        "tld": [".ai"],
+        "alpha2Code": "AI",
+        "alpha3Code": "AIA",
+        "independent": false,
+        "status": "officially-assigned",
+        "unMember": false,
+        "currencies": {
+            "XCD": {
+                "name": "Eastern Caribbean dollar",
+                "symbol": "$"
+            }
+        },
+        "idd": {
+            "root": "+1",
+            "suffixes": ["264"]
+        },
+        "capital": ["The Valley"],
+        "altSpellings": ["AI"],
+        "region": "Americas",
+        "subregion": "Caribbean",
+        "languages": {
+            "eng": "English"
+        },
+        "translations": {
+            "ces": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "deu": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "est": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "fin": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "fra": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "hrv": {
+                "official": "Anguilla",
+                "common": "Angvila"
+            },
+            "hun": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "ita": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "jpn": {
+                "official": "\u30a2\u30f3\u30b0\u30a3\u30e9",
+                "common": "\u30a2\u30f3\u30ae\u30e9"
+            },
+            "kor": {
+                "official": "\uc575\uadc8\ub77c",
+                "common": "\uc575\uadc8\ub77c"
+            },
+            "nld": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "per": {
+                "official": "\u0622\u0646\u06af\u0648\u06cc\u0644\u0627",
+                "common": "\u0622\u0646\u06af\u0648\u06cc\u0644\u0627"
+            },
+            "pol": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "por": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "rus": {
+                "official": "\u0410\u043d\u0433\u0438\u043b\u044c\u044f",
+                "common": "\u0410\u043d\u0433\u0438\u043b\u044c\u044f"
+            },
+            "slk": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "spa": {
+                "official": "Anguila",
+                "common": "Anguilla"
+            },
+            "swe": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            },
+            "urd": {
+                "official": "\u0627\u06cc\u0646\u06af\u0648\u06cc\u0644\u0627",
+                "common": "\u0627\u06cc\u0646\u06af\u0648\u06cc\u0644\u0627"
+            },
+            "zho": {
+                "official": "\u5b89\u572d\u62c9",
+                "common": "\u5b89\u572d\u62c9"
+            }
+        },
+        "latlng": [18.25, -63.16666666],
+        "landlocked": false,
+        "borders": [],
+        "area": 91,
+        "demonyms": {
+            "eng": {
+                "f": "Anguillian",
+                "m": "Anguillian"
+            },
+            "fra": {
+                "f": "Anguillane",
+                "m": "Anguillan"
+            }
+        }
+    },
+    {
+        "name": {
+            "common": "\u00c5land Islands",
+            "official": "\u00c5land Islands",
+            "native": {
+                "swe": {
+                    "official": "Landskapet \u00c5land",
+                    "common": "\u00c5land"
+                }
+            }
+        },
+        "tld": [".ax"],
+        "alpha2Code": "AX",
+        "alpha3Code": "ALA",
+        "independent": false,
+        "status": "officially-assigned",
+        "unMember": false,
+        "currencies": {
+            "EUR": {
+                "name": "Euro",
+                "symbol": "\u20ac"
+            }
+        },
+        "idd": {
+            "root": "+3",
+            "suffixes": ["5818"]
+        },
+        "capital": ["Mariehamn"],
+        "altSpellings": ["AX", "Aaland", "Aland", "Ahvenanmaa"],
+        "region": "Europe",
+        "subregion": "Northern Europe",
+        "languages": {
+            "swe": "Swedish"
+        },
+        "translations": {
+            "ces": {
+                "official": "\u00c5landsk\u00e9 ostrovy",
+                "common": "\u00c5landy"
+            },
+            "deu": {
+                "official": "\u00c5land-Inseln",
+                "common": "\u00c5land"
+            },
+            "est": {
+                "official": "Ahvenamaa maakond",
+                "common": "Ahvenamaa"
+            },
+            "fin": {
+                "official": "Ahvenanmaan maakunta",
+                "common": "Ahvenanmaa"
+            },
+            "fra": {
+                "official": "Ahvenanmaa",
+                "common": "Ahvenanmaa"
+            },
+            "hrv": {
+                "official": "Aland Islands",
+                "common": "\u00c5landski otoci"
+            },
+            "hun": {
+                "official": "\u00c5land-szigetek",
+                "common": "\u00c5land-szigetek"
+            },
+            "ita": {
+                "official": "Isole \u00c5land",
+                "common": "Isole Aland"
+            },
+            "jpn": {
+                "official": "\u30aa\u30fc\u30e9\u30f3\u30c9\u8af8\u5cf6",
+                "common": "\u30aa\u30fc\u30e9\u30f3\u30c9\u8af8\u5cf6"
+            },
+            "kor": {
+                "official": "\uc62c\ub780\ub4dc \uc81c\ub3c4",
+                "common": "\uc62c\ub780\ub4dc \uc81c\ub3c4"
+            },
+            "nld": {
+                "official": "\u00c5land eilanden",
+                "common": "\u00c5landeilanden"
+            },
+            "per": {
+                "official": "\u062c\u0632\u0627\u06cc\u0631 \u0627\u0644\u0646\u062f",
+                "common": "\u062c\u0632\u0627\u06cc\u0631 \u0627\u0644\u0646\u062f"
+            },
+            "pol": {
+                "official": "Wyspy Alandzkie",
+                "common": "Wyspy Alandzkie"
+            },
+            "por": {
+                "official": "Ilhas \u00c5land",
+                "common": "Al\u00e2ndia"
+            },
+            "rus": {
+                "official": "\u0410\u043b\u0430\u043d\u0434\u0441\u043a\u0438\u0435 \u043e\u0441\u0442\u0440\u043e\u0432\u0430",
+                "common": "\u0410\u043b\u0430\u043d\u0434\u0441\u043a\u0438\u0435 \u043e\u0441\u0442\u0440\u043e\u0432\u0430"
+            },
+            "slk": {
+                "official": "Alandsk\u00e9 ostrovy",
+                "common": "Alandy"
+            },
+            "spa": {
+                "official": "Islas \u00c5land",
+                "common": "Alandia"
+            },
+            "swe": {
+                "official": "\u00c5land",
+                "common": "\u00c5land"
+            },
+            "urd": {
+                "official": "\u062c\u0632\u0627\u0626\u0631 \u0627\u0648\u0644\u0646\u062f",
+                "common": "\u062c\u0632\u0627\u0626\u0631 \u0627\u0648\u0644\u0646\u062f"
+            },
+            "zho": {
+                "official": "\u5965\u5170\u7fa4\u5c9b",
+                "common": "\u5965\u5170\u7fa4\u5c9b"
+            }
+        },
+        "latlng": [60.116667, 19.9],
+        "landlocked": false,
+        "borders": [],
+        "area": 1580,
+        "demonyms": {
+            "eng": {
+                "f": "\u00c5landish",
+                "m": "\u00c5landish"
+            },
+            "fra": {
+                "f": "\u00c5landaise",
+                "m": "\u00c5landais"
+            }
+        }
+    },
+    {
+        "name": {
+            "common": "Albania",
+            "official": "Republic of Albania",
+            "native": {
+                "sqi": {
+                    "official": "Republika e Shqip\u00ebris\u00eb",
+                    "common": "Shqip\u00ebria"
+                }
+            }
+        },
+        "tld": [".al"],
+        "alpha2Code": "AL",
+        "alpha3Code": "ALB",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "ALL": {
+                "name": "Albanian lek",
+                "symbol": "L"
+            }
+        },
+        "idd": {
+            "root": "+3",
+            "suffixes": ["55"]
+        },
+        "capital": ["Tirana"],
+        "altSpellings": ["AL", "Shqip\u00ebri", "Shqip\u00ebria", "Shqipnia"],
+        "region": "Europe",
+        "subregion": "Southeast Europe",
+        "languages": {
+            "sqi": "Albanian"
+        },
+        "translations": {
+            "ces": {
+                "official": "Alb\u00e1nsk\u00e1 republika",
+                "common": "Alb\u00e1nie"
+            },
+            "cym": {
+                "official": "Gweriniaeth Albania",
+                "common": "Albania"
+            },
+            "deu": {
+                "official": "Republik Albanien",
+                "common": "Albanien"
+            },
+            "est": {
+                "official": "Albaania Vabariik",
+                "common": "Albaania"
+            },
+            "fin": {
+                "official": "Albanian tasavalta",
+                "common": "Albania"
+            },
+            "fra": {
+                "official": "R\u00e9publique d'Albanie",
+                "common": "Albanie"
+            },
+            "hrv": {
+                "official": "Republika Albanija",
+                "common": "Albanija"
+            },
+            "hun": {
+                "official": "Alb\u00e1n K\u00f6zt\u00e1rsas\u00e1g",
+                "common": "Alb\u00e1nia"
+            },
+            "ita": {
+                "official": "Repubblica d'Albania",
+                "common": "Albania"
+            },
+            "jpn": {
+                "official": "\u30a2\u30eb\u30d0\u30cb\u30a2\u5171\u548c\u56fd",
+                "common": "\u30a2\u30eb\u30d0\u30cb\u30a2"
+            },
+            "kor": {
+                "official": "\uc54c\ubc14\ub2c8\uc544 \uacf5\ud654\uad6d",
+                "common": "\uc54c\ubc14\ub2c8\uc544"
+            },
+            "nld": {
+                "official": "Republiek Albani\u00eb",
+                "common": "Albani\u00eb"
+            },
+            "per": {
+                "official": "\u062c\u0645\u0647\u0648\u0631\u06cc \u0622\u0644\u0628\u0627\u0646\u06cc",
+                "common": "\u0622\u0644\u0628\u0627\u0646\u06cc"
+            },
+            "pol": {
+                "official": "Republika Albanii",
+                "common": "Albania"
+            },
+            "por": {
+                "official": "Rep\u00fablica da Alb\u00e2nia",
+                "common": "Alb\u00e2nia"
+            },
+            "rus": {
+                "official": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0410\u043b\u0431\u0430\u043d\u0438\u044f",
+                "common": "\u0410\u043b\u0431\u0430\u043d\u0438\u044f"
+            },
+            "slk": {
+                "official": "Alb\u00e1nska republika",
+                "common": "Alb\u00e1nsko"
+            },
+            "spa": {
+                "official": "Rep\u00fablica de Albania",
+                "common": "Albania"
+            },
+            "swe": {
+                "official": "Republiken Albanien",
+                "common": "Albanien"
+            },
+            "urd": {
+                "official": "\u062c\u0645\u06c1\u0648\u0631\u06cc\u06c1 \u0627\u0644\u0628\u0627\u0646\u06cc\u0627",
+                "common": "\u0627\u0644\u0628\u0627\u0646\u06cc\u0627"
+            },
+            "zho": {
+                "official": "\u963f\u5c14\u5df4\u5c3c\u4e9a\u5171\u548c\u56fd",
+                "common": "\u963f\u5c14\u5df4\u5c3c\u4e9a"
+            }
+        },
+        "latlng": [41, 20],
+        "landlocked": false,
+        "borders": ["MNE", "GRC", "MKD", "UNK"],
+        "area": 28748,
+        "demonyms": {
+            "eng": {
+                "f": "Albanian",
+                "m": "Albanian"
+            },
+            "fra": {
+                "f": "Albanaise",
+                "m": "Albanais"
+            }
+        }
+    },
+    {
+        "name": {
+            "common": "Andorra",
+            "official": "Principality of Andorra",
+            "native": {
+                "cat": {
+                    "official": "Principat d'Andorra",
+                    "common": "Andorra"
+                }
+            }
+        },
+        "tld": [".ad"],
+        "alpha2Code": "AD",
+        "alpha3Code": "AND",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "EUR": {
+                "name": "Euro",
+                "symbol": "\u20ac"
+            }
+        },
+        "idd": {
+            "root": "+3",
+            "suffixes": ["76"]
+        },
+        "capital": ["Andorra la Vella"],
+        "altSpellings": ["AD", "Principality of Andorra", "Principat d'Andorra"],
+        "region": "Europe",
+        "subregion": "Southern Europe",
+        "languages": {
+            "cat": "Catalan"
+        },
+        "translations": {
+            "ces": {
+                "official": "Andorrsk\u00e9 kn\u00ed\u017eectv\u00ed",
+                "common": "Andorra"
+            },
+            "cym": {
+                "official": "Tywysogaeth Andorra",
+                "common": "Andorra"
+            },
+            "deu": {
+                "official": "F\u00fcrstentum Andorra",
+                "common": "Andorra"
+            },
+            "est": {
+                "official": "Andorra V\u00fcrstiriik",
+                "common": "Andorra"
+            },
+            "fin": {
+                "official": "Andorran ruhtinaskunta",
+                "common": "Andorra"
+            },
+            "fra": {
+                "official": "Principaut\u00e9 d'Andorre",
+                "common": "Andorre"
+            },
+            "hrv": {
+                "official": "Kne\u017eevina Andora",
+                "common": "Andora"
+            },
+            "hun": {
+                "official": "Andorra",
+                "common": "Andorra"
+            },
+            "ita": {
+                "official": "Principato di Andorra",
+                "common": "Andorra"
+            },
+            "jpn": {
+                "official": "\u30a2\u30f3\u30c9\u30e9\u516c\u56fd",
+                "common": "\u30a2\u30f3\u30c9\u30e9"
+            },
+            "kor": {
+                "official": "\uc548\ub3c4\ub77c \uacf5\uad6d",
+                "common": "\uc548\ub3c4\ub77c"
+            },
+            "nld": {
+                "official": "Prinsdom Andorra",
+                "common": "Andorra"
+            },
+            "per": {
+                "official": "\u0634\u0627\u0647\u0632\u0627\u062f\u0647\u200c\u0646\u0634\u06cc\u0646 \u0622\u0646\u062f\u0648\u0631\u0627",
+                "common": "\u0622\u0646\u062f\u0648\u0631\u0627"
+            },
+            "pol": {
+                "official": "Ksi\u0119stwo Andory",
+                "common": "Andora"
+            },
+            "por": {
+                "official": "Principado de Andorra",
+                "common": "Andorra"
+            },
+            "rus": {
+                "official": "\u041a\u043d\u044f\u0436\u0435\u0441\u0442\u0432\u043e \u0410\u043d\u0434\u043e\u0440\u0440\u0430",
+                "common": "\u0410\u043d\u0434\u043e\u0440\u0440\u0430"
+            },
+            "slk": {
+                "official": "Andorrsk\u00e9 knie\u017eatstvo",
+                "common": "Andorra"
+            },
+            "spa": {
+                "official": "Principado de Andorra",
+                "common": "Andorra"
+            },
+            "swe": {
+                "official": "Furstend\u00f6met Andorra",
+                "common": "Andorra"
+            },
+            "urd": {
+                "official": "\u0627\u0645\u0627\u0631\u0627\u062a\u0650 \u0627\u0646\u0688\u0648\u0631\u0627",
+                "common": "\u0627\u0646\u0688\u0648\u0631\u0627"
+            },
+            "zho": {
+                "official": "\u5b89\u9053\u5c14\u516c\u56fd",
+                "common": "\u5b89\u9053\u5c14"
+            }
+        },
+        "latlng": [42.5, 1.5],
+        "landlocked": true,
+        "borders": ["FRA", "ESP"],
+        "area": 468,
+        "demonyms": {
+            "eng": {
+                "f": "Andorran",
+                "m": "Andorran"
+            },
+            "fra": {
+                "f": "Andorrane",
+                "m": "Andorran"
+            }
+        }
+    },
+    {
+        "name": {
+            "common": "United Arab Emirates",
+            "official": "United Arab Emirates",
+            "native": {
+                "ara": {
+                    "official": "\u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629",
+                    "common": "\u062f\u0648\u0644\u0629 \u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629"
+                }
+            }
+        },
+        "tld": [".ae", "\u0627\u0645\u0627\u0631\u0627\u062a."],
+        "alpha2Code": "AE",
+        "alpha3Code": "ARE",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "AED": {
+                "name": "United Arab Emirates dirham",
+                "symbol": "\u062f.\u0625"
+            }
+        },
+        "idd": {
+            "root": "+9",
+            "suffixes": ["71"]
+        },
+        "capital": ["Abu Dhabi"],
+        "altSpellings": ["AE", "UAE", "Emirates"],
+        "region": "Asia",
+        "subregion": "Western Asia",
+        "languages": {
+            "ara": "Arabic"
+        },
+        "translations": {
+            "ces": {
+                "official": "Spojen\u00e9 arabsk\u00e9 emir\u00e1ty",
+                "common": "Spojen\u00e9 arabsk\u00e9 emir\u00e1ty"
+            },
+            "deu": {
+                "official": "Vereinigte Arabische Emirate",
+                "common": "Vereinigte Arabische Emirate"
+            },
+            "est": {
+                "official": "Araabia \u00dchendemiraadid",
+                "common": "Araabia \u00dchendemiraadid"
+            },
+            "fin": {
+                "official": "Yhdistyneet arabiemiirikunnat",
+                "common": "Arabiemiraatit"
+            },
+            "fra": {
+                "official": "\u00c9mirats arabes unis",
+                "common": "\u00c9mirats arabes unis"
+            },
+            "hrv": {
+                "official": "Ujedinjeni Arapski Emirati",
+                "common": "Ujedinjeni Arapski Emirati"
+            },
+            "hun": {
+                "official": "Egyes\u00fclt Arab Em\u00edrs\u00e9gek",
+                "common": "Egyes\u00fclt Arab Em\u00edrs\u00e9gek"
+            },
+            "ita": {
+                "official": "Emirati Arabi Uniti",
+                "common": "Emirati Arabi Uniti"
+            },
+            "jpn": {
+                "official": "\u30a2\u30e9\u30d6\u9996\u9577\u56fd\u9023\u90a6",
+                "common": "\u30a2\u30e9\u30d6\u9996\u9577\u56fd\u9023\u90a6"
+            },
+            "kor": {
+                "official": "\uc544\ub78d \ud1a0\ud6c4\uad6d \uc5f0\ubc29",
+                "common": "\uc544\ub78d\uc5d0\ubbf8\ub9ac\ud2b8"
+            },
+            "nld": {
+                "official": "Verenigde Arabische Emiraten",
+                "common": "Verenigde Arabische Emiraten"
+            },
+            "per": {
+                "official": "\u0627\u0645\u0627\u0631\u0627\u062a \u0645\u062a\u062d\u062f\u0647 \u0639\u0631\u0628\u06cc",
+                "common": "\u0627\u0645\u0627\u0631\u0627\u062a"
+            },
+            "pol": {
+                "official": "Zjednoczone Emiraty Arabskie",
+                "common": "Zjednoczone Emiraty Arabskie"
+            },
+            "por": {
+                "official": "Emirados \u00c1rabes Unidos",
+                "common": "Emirados \u00c1rabes Unidos"
+            },
+            "rus": {
+                "official": "\u041e\u0431\u044a\u0435\u0434\u0438\u043d\u0435\u043d\u043d\u044b\u0435 \u0410\u0440\u0430\u0431\u0441\u043a\u0438\u0435 \u042d\u043c\u0438\u0440\u0430\u0442\u044b",
+                "common": "\u041e\u0431\u044a\u0435\u0434\u0438\u043d\u0451\u043d\u043d\u044b\u0435 \u0410\u0440\u0430\u0431\u0441\u043a\u0438\u0435 \u042d\u043c\u0438\u0440\u0430\u0442\u044b"
+            },
+            "slk": {
+                "official": "Spojen\u00e9 arabsk\u00e9 emir\u00e1ty",
+                "common": "Spojen\u00e9 arabsk\u00e9 emir\u00e1ty"
+            },
+            "spa": {
+                "official": "Emiratos \u00c1rabes Unidos",
+                "common": "Emiratos \u00c1rabes Unidos"
+            },
+            "swe": {
+                "official": "F\u00f6renade Arabemiraten",
+                "common": "F\u00f6renade Arabemiraten"
+            },
+            "urd": {
+                "official": "\u0645\u062a\u062d\u062f\u06c1 \u0639\u0631\u0628 \u0627\u0645\u0627\u0631\u0627\u062a",
+                "common": "\u0645\u062a\u062d\u062f\u06c1 \u0639\u0631\u0628 \u0627\u0645\u0627\u0631\u0627\u062a"
+            },
+            "zho": {
+                "official": "\u963f\u62c9\u4f2f\u8054\u5408\u914b\u957f\u56fd",
+                "common": "\u963f\u62c9\u4f2f\u8054\u5408\u914b\u957f\u56fd"
+            }
+        },
+        "latlng": [24, 54],
+        "landlocked": false,
+        "borders": ["OMN", "SAU"],
+        "area": 83600,
+        "demonyms": {
+            "eng": {
+                "f": "Emirati",
+                "m": "Emirati"
+            },
+            "fra": {
+                "f": "Emirienne",
+                "m": "Emirien"
+            }
+        }
+    },
+    {
+        "name": {
+            "common": "Argentina",
+            "official": "Argentine Republic",
+            "native": {
+                "grn": {
+                    "official": "Argentine Republic",
+                    "common": "Argentina"
+                },
+                "spa": {
+                    "official": "Rep\u00fablica Argentina",
+                    "common": "Argentina"
+                }
+            }
+        },
+        "tld": [".ar"],
+        "alpha2Code": "AR",
+        "alpha3Code": "ARG",
+        "independent": true,
+        "status": "officially-assigned",
+        "unMember": true,
+        "currencies": {
+            "ARS": {
+                "name": "Argentine peso",
+                "symbol": "$"
+            }
+        },
+        "idd": {
+            "root": "+5",
+            "suffixes": ["4"]
+        },
+        "capital": ["Buenos Aires"],
+        "altSpellings": ["AR", "Argentine Republic", "Rep\u00fablica Argentina"],
+        "region": "Americas",
+        "subregion": "South America",
+        "languages": {
+            "grn": "Guaran\u00ed",
+            "spa": "Spanish"
+        },
+        "translations": {
+            "ces": {
+                "official": "Argentinsk\u00e1 republika",
+                "common": "Argentina"
+            },
+            "cym": {
+                "official": "Gweriniaeth yr Ariannin",
+                "common": "Ariannin"
+            },
+            "deu": {
+                "official": "Argentinische Republik",
+                "common": "Argentinien"
+            },
+            "est": {
+                "official": "Argentina Vabariik",
+                "common": "Argentina"
+            },
+            "fin": {
+                "official": "Argentiinan tasavalta",
+                "common": "Argentiina"
+            },
+            "fra": {
+                "official": "R\u00e9publique argentine",
+                "common": "Argentine"
+            },
+            "hrv": {
+                "official": "Argentinski Republika",
+                "common": "Argentina"
+            },
+            "hun": {
+                "official": "Argentin K\u00f6zt\u00e1rsas\u00e1g",
+                "common": "Argent\u00edna"
+            },
+            "ita": {
+                "official": "Repubblica Argentina",
+                "common": "Argentina"
+            },
+            "jpn": {
+                "official": "\u30a2\u30eb\u30bc\u30f3\u30c1\u30f3\u5171\u548c\u56fd",
+                "common": "\u30a2\u30eb\u30bc\u30f3\u30c1\u30f3"
+            },
+            "kor": {
+                "official": "\uc544\ub974\ud5e8\ud2f0\ub098 \uacf5\ud654\uad6d",
+                "common": "\uc544\ub974\ud5e8\ud2f0\ub098"
+            },
+            "nld": {
+                "official": "Argentijnse Republiek",
+                "common": "Argentini\u00eb"
+            },
+            "per": {
+                "official": "\u062c\u0645\u0647\u0648\u0631\u06cc \u0622\u0631\u0698\u0627\u0646\u062a\u06cc\u0646",
+                "common": "\u0622\u0631\u0698\u0627\u0646\u062a\u06cc\u0646"
+            },
+            "pol": {
+                "official": "Republika Argenty\u0144ska",
+                "common": "Argentyna"
+            },
+            "por": {
+                "official": "Rep\u00fablica Argentina",
+                "common": "Argentina"
+            },
+            "rus": {
+                "official": "\u0410\u0440\u0433\u0435\u043d\u0442\u0438\u043d\u0441\u043a\u0430\u044f \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430",
+                "common": "\u0410\u0440\u0433\u0435\u043d\u0442\u0438\u043d\u0430"
+            },
+            "slk": {
+                "official": "Argent\u00ednska republika",
+                "common": "Argent\u00edna"
+            },
+            "spa": {
+                "official": "Rep\u00fablica Argentina",
+                "common": "Argentina"
+            },
+            "swe": {
+                "official": "Republiken Argentina",
+                "common": "Argentina"
+            },
+            "urd": {
+                "official": "\u062c\u0645\u06c1\u0648\u0631\u06cc\u06c1 \u0627\u0631\u062c\u0646\u0679\u0627\u0626\u0646",
+                "common": "\u0627\u0631\u062c\u0646\u0679\u0627\u0626\u0646"
+            },
+            "zho": {
+                "official": "\u963f\u6839\u5ef7\u5171\u548c\u56fd",
+                "common": "\u963f\u6839\u5ef7"
+            }
+        },
+        "latlng": [-34, -64],
+        "landlocked": false,
+        "borders": ["BOL", "BRA", "CHL", "PRY", "URY"],
+        "area": 2780400,
+        "demonyms": {
+            "eng": {
+                "f": "Argentine",
+                "m": "Argentine"
+            },
+            "fra": {
+                "f": "Argentine",
+                "m": "Argentin"
+            }
+        }
+    }
+]
+
+
+
+</script>
+
+<style scoped></style>
+

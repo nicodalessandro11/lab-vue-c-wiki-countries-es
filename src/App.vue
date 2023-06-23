@@ -1,13 +1,18 @@
 <template>
-  <div class="app">
-
+  <div>
+    <Navbar />
+    <router-view />
   </div>
 </template>
 
-<script>
+<script setup>
+import Navbar from './components/Navbar.vue';
 
 </script>
 
 <style>
-
+.custom-scrollbar {
+  max-height: 500px;
+  overflow-y: scroll;
+}
 </style>
