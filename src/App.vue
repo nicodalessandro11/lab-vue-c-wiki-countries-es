@@ -1,13 +1,24 @@
 <template>
   <div>
     <Navbar />
-    <router-view />
+    <div class="row">
+      <div class="col-12 mt-5">
+        <router-view />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import Navbar from './components/Navbar.vue';
+import { onMounted } from 'vue';
+import { useCountryStore } from './stores/countries'
 
+const store = useCountryStore();
+
+onMounted(() => {
+  store.loadCountries();
+})
 </script>
 
 <style>
