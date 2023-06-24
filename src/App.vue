@@ -16,9 +16,10 @@ import { useCountryStore } from './stores/countries'
 
 const store = useCountryStore();
 
-onMounted(() => {
-  store.loadCountries();
-})
+onMounted(async () => {
+  await store.loadCountries();
+}
+);
 </script>
 
 <style>
