@@ -5,6 +5,7 @@ export const useCountryStore = defineStore("countryStore", {
   state: () => ({
     countries: [],
     currentCountryCode: null,
+    loading: true,
   }),
   getters: {
     currentCountry() {
@@ -32,6 +33,7 @@ export const useCountryStore = defineStore("countryStore", {
         "https://ih-countries-api.herokuapp.com/countries "
       );
       this.countries = response.data;
+      this.loading = false;
     },
     setCountryCode(code) {
       this.currentCountryCode = code;

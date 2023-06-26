@@ -17,6 +17,7 @@ import { useCountryStore } from './stores/countries'
 const store = useCountryStore();
 
 onMounted(async () => {
+  console.log("carga inicial");
   await store.loadCountries();
 }
 );
