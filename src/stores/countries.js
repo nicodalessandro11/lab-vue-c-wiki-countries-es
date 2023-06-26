@@ -9,22 +9,29 @@ export const useCountryStore = defineStore("countryStore", {
   }),
   getters: {
     currentCountry() {
-      const country = this.countries.find(
-        (c) => c.alpha3Code === this.currentCountryCode
-      );
+      try {
+        const country = this.countries.find(
+          (c) => c.alpha3Code === this.currentCountryCode
+        );
 
-      return {
-        capital: country.capital[0],
-        area: country.area,
-        name: country.name.common,
-        alpha2Code: country.alpha2Code.toLowerCase(),
-        borders: country.borders.map((borderCountryCode) => {
-          const borderCountry = this.countries.find(
-            (c) => c.alpha3Code === borderCountryCode
-          );
-          return borderCountry ? borderCountry.name.common : "";
-        }),
-      };
+        if (country) {
+          return {
+            capital: country.capital[0],
+            area: country.area,
+            name: country.name.common,
+            alpha2Code: country.alpha2Code.toLowerCase(),
+            borders: country.borders.map((borderCountryCode) => {
+              const borderCountry = this.countries.find(
+                (c) => c.alpha3Code === borderCountryCode
+              );
+              return borderCountry ? borderCountry.name.common : "";
+            }),
+          };
+        }
+      } catch (error) {
+        console.log(error);
+        return null;
+      }
     },
   },
   actions: {
